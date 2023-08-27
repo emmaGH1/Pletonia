@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { BsTwitter, BsLinkedin, BsGithub } from 'react-icons/bs'
 import { motion } from 'framer-motion'
+
+import { Button } from "../ui/button";
 import { HeaderAnimationVariant } from "@/lib/motion";
 
 const HomeContent = () => {
@@ -24,10 +26,10 @@ const HomeContent = () => {
   }
   
   return (
-    <div className="flex flex-col items-center md:justify-center justify-normal min-h-screen px-4 mt-14">
+    <div className="flex flex-col items-center min-h-screen px-4 mt-20">
       <div className="text-center mb-8">
         <div className="text-2xl md:text-4xl font-bold mb-4">
-            {animateText(textContent, 0.01)}
+            {animateText(textContent, 0.001)}
         </div>
         <p 
          className="
@@ -36,18 +38,18 @@ const HomeContent = () => {
           dark:text-gray-400 flex flex-wrap
             w-4/5 mx-auto 
           ">
-            {animateText(textContent2, 0.05)}
+            {animateText(textContent2, 0.005)}
         </p>
       </div>
       <div className="border border-dark-primary p-3">
-        <p className="text-base md:text-lg text-gray-800 dark:text-gray-100">
+        <p className="text-base md:text-lg text-gray-800 dark:text-gray-500">
           Effortlessly manage job applications, track progress, and gain insights into your career path.
           Let Pletonia guide you to your dream job! 🌠
         </p>
       </div>
-      <button className="mt-14 md:mt-8 bg-dark-primary text-white px-6 py-3 rounded-md shadow-lg hover:bg-primary hover:text-dark-primary border hover:border-dark-primary border-dark-primary transition-colors">
-        Get Started
-      </button>
+      <Button asChild variant='destructive' className="mt-14 md:mt-8 bg-dark-primary text-white px-6 py-3 rounded-md shadow-lg hover:text-dark-accent transition duration-200" >
+        <Link href='/sign-up'>Get Started</Link>
+      </Button>
       <footer className="mt-12 md:mt-16 flex items-center justify-center text-dark-primary dark:text-secondary space-x-4 md:space-x-6">
         <Link href="https://github.com/emmaGH1" target="_blank">
           <BsGithub className="text-xl hover:text-dark-accent transition-colors" />
