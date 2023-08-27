@@ -37,7 +37,7 @@ const HomeNavbar = () => {
       <div className="flex justify-between mx-auto w-9/10 mt-5 ">
 
         <div className="flex items-center">
-          <Image src='/logo.svg' alt='logo' width={30} height={30} />
+          <Image src='/logo.svg' alt='logo' width={30} height={30}/>
           <h1 className="text-3xl ml-2 font-bold ">Pletonia</h1>
         </div>
         
