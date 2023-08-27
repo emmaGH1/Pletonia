@@ -1,54 +1,48 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { UserCircle } from "lucide-react";
+import Link from "next/link";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import Link from "next/link";
+import { ToggleButton } from "../shared/ToggleButton";
+import { button, buttonOutlined } from "@/app/styles/globalStyles";
+
 
 const HomeNavbar = () => {
-  const buttonOutlined = `
-  whitespace-nowrap
-  border border-black
-  dark:border-slate-100
-  hover:text-accent
-  hover:bg-dark-primary
-  hover:dark:bg-primary 
-  hover:dark:text-accent
-   mr-5`
 
-  const button = `
-    whitespace-nowrap
-    hover:text-accent 
-    hover:bg-primary
-    hover:dark:bg-dark-primary 
-    hover:dark:text-dark-accent 
-    bg-dark-primary 
-    dark:bg-primary 
-    text-primary 
-    dark:text-dark-primary hover:border 
-    border-black
-  `
   return (
     <>
       <div className="flex justify-between mx-auto w-9/10 mt-5 ">
 
         <div className="flex items-center">
-          <Image src='/logo.svg' alt='logo' width={30} height={30}/>
-          <h1 className="text-3xl ml-2 font-bold ">Pletonia</h1>
+          <div className="dark:shadow-inner">
+            <Image src='/logo.svg' alt='logo' width={30} height={30} className="hidden md:block dark:invert" />
+          </div>
+          <h1 className="text-3xl ml-2 font-bold">Pletonia</h1>
+        </div>
+        
+        <div className="flex items-center">
+
+        {/* Toggle Mode Button */}
+        <div className="mr-2 md:mr-5">
+          <ToggleButton />
         </div>
         
         {/* For desktop devices */}
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex justify-between">
           <Button 
-            className={buttonOutlined}
+            className={button}
            >
             Sign In
           </Button>
-          <Button className={button}>
+          <Button className={buttonOutlined}>
             Sign Up
           </Button>
         </div>
@@ -62,20 +56,22 @@ const HomeNavbar = () => {
             <DropdownMenuContent className="absolute right-0 flex">
               <DropdownMenuItem>
                 <Button asChild className={`${buttonOutlined}`} size='lg'>
-                  <Link href="/login">
+                  <Link href="/sign-up">
                     Sign In
                   </Link>
                 </Button>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Button asChild className={`${button}`} size='lg'>
-                  <Link href="/login">
+                  <Link href="/sign-in">
                     Sign Up
                   </Link>
                 </Button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+        </div>
+
         </div>
       </div>
     </>
