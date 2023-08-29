@@ -15,27 +15,27 @@ interface NavBarLinksProps {
 export const navbarLinks: NavBarLinksProps[] = [
   {
     icon: AiFillHome,
-    route: '/',
+    route: '/dashboard',
     label: 'Home',
   },
   {
     icon: IoMdAddCircleOutline,
-    route: '/add-job',
+    route: '/dashboard/add-job',
     label: 'Add job',
   },
   {
     icon: ImStatsDots,
-    route: '/stats',
+    route: '/dashboard/stats',
     label: 'Stats',
   },
   {
     icon: CgProfile,
-    route: '/profile',
+    route: '/dashboard/profile',
     label: 'Profile',
   },
   {
     icon: BiLogOut,
-    route: '/log-out',
+    route: '/dashboard/log-out',
     label: 'Log Out',
   },
 ];
