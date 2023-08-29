@@ -1,4 +1,4 @@
-import Navbar from "@/components/shared/Navbar"
+import Navbar from "@/components/dashboard/Navbar"
 import { ReactNode } from "react"
 
 interface Props {
@@ -10,11 +10,9 @@ export default function Layout({ children }: Props) {
     <>
       <main className="flex flex-col lg:flex-row">
         <Navbar />
-
-        <section>
-           {children}
-        </section>  
+        {children}
       </main>
+      
     </>
   )
 }
