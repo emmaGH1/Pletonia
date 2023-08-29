@@ -30,8 +30,13 @@ module.exports = {
         'primary': '#ffffff',
         'secondary': '#f2f2f2',
         'accent': '#a781ea'
+      },
+      fontFamily: {
+        'base': ['"Fira Sans Condensed"', 'sans-serif'],
+        'sub-heading': ['Prompt', ' sans-serif'],
+        'heading': ['Nunito',  'sans-serif']
       }
     },
   },
-  plugins: ['tailwind-merge-default'],
+  plugins: []
 }
