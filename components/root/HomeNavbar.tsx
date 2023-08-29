@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import { UserCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ToggleButton } from "../shared/ToggleButton";
 import { button, buttonOutlined } from "@/app/styles/globalStyles";
+import HeaderName from "../shared/HeaderName";
 
 
 const HomeNavbar = () => {
@@ -21,11 +21,8 @@ const HomeNavbar = () => {
     <>
       <div className="flex justify-between mx-auto w-9/10 mt-5 ">
 
-        <div className="flex items-center">
-          <div className="dark:shadow-inner">
-            <Image src='/logo.svg' alt='logo' width={30} height={30} className="hidden md:block dark:invert" />
-          </div>
-          <h1 className="text-3xl ml-2 font-bold">Pletonia</h1>
+        <div>
+          <HeaderName />
         </div>
         
         <div className="flex items-center">

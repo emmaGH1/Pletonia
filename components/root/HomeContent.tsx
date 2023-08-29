@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 import { Button } from "../ui/button";
 import { HeaderAnimationVariant } from "@/lib/motion";
+import { FallbackText } from "../FallbackText";
 
 const HomeContent = () => {
   const textContent = 'Welcome to Pletonia 🚀🌟'
@@ -18,7 +19,7 @@ const HomeContent = () => {
           key={index}
           variants={HeaderAnimationVariant(index, delayY)}
           initial="hidden"
-          whileInView="show"
+          animate="show"
         >
           {letter === ' ' ? '\u00A0' : letter}
         </motion.span>
@@ -29,7 +30,7 @@ const HomeContent = () => {
     <div className="flex flex-col items-center min-h-screen px-4 mt-20">
       <div className="text-center mb-8">
         <div className="text-2xl md:text-4xl font-bold mb-4">
-            {animateText(textContent, 0.001)}
+             <FallbackText content={animateText(textContent, 0.001)} fallbacktext={textContent} />
         </div>
         <p 
          className="
@@ -38,7 +39,7 @@ const HomeContent = () => {
           dark:text-gray-400 flex flex-wrap
             w-4/5 mx-auto 
           ">
-            {animateText(textContent2, 0.005)}
+             <FallbackText content={animateText(textContent2, 0.001)} fallbacktext={textContent2} />
         </p>
       </div>
       <div className="border border-dark-primary p-3">
