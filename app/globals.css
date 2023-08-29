@@ -3,3 +3,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* You can adjust the opacity as needed */
+    backdrop-filter: blur(5px); /* Adjust the blur intensity */
+    pointer-events: none; /* Allow clicks to go through the blurred overlay */
+  }
+  
+.sidebar {
+  width: auto; /* Allow the width to adjust based on content */
+  min-width: 200px; /* Set a minimum width to prevent it from becoming too narrow */
+  max-width: 80%; /* Set a maximum width to control how wide it can become */
+  height: 100vh;
+  /* Add any other styling you want for the sidebar */
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
