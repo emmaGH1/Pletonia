@@ -1,10 +1,6 @@
 import { ElementType, ReactNode } from 'react';
-import { AiFillHome } from 'react-icons/ai';
-import { GrFormAdd } from 'react-icons/gr';
-import { ImStatsDots } from 'react-icons/im';
-import { CgProfile } from 'react-icons/cg';
-import { BiLogOut } from 'react-icons/bi';
-import { IoMdAddCircleOutline } from 'react-icons/io'
+import { Home, BadgePlus, PieChart, User, LogOut,  } from 'lucide-react';
+
 
 interface NavBarLinksProps {
   icon: ElementType;
@@ -14,27 +10,27 @@ interface NavBarLinksProps {
 
 export const navbarLinks: NavBarLinksProps[] = [
   {
-    icon: AiFillHome,
+    icon: Home,
     route: '/dashboard',
     label: 'Home',
   },
   {
-    icon: IoMdAddCircleOutline,
+    icon: BadgePlus,
     route: '/dashboard/add-job',
     label: 'Add job',
   },
   {
-    icon: ImStatsDots,
+    icon: PieChart,
     route: '/dashboard/stats',
     label: 'Stats',
   },
   {
-    icon: CgProfile,
+    icon: User,
     route: '/dashboard/profile',
     label: 'Profile',
   },
   {
-    icon: BiLogOut,
+    icon: LogOut,
     route: '/dashboard/log-out',
     label: 'Log Out',
   },
