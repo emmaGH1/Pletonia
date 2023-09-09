@@ -2,8 +2,6 @@
 
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useTheme } from "next-themes"
-
 interface Props {
    percentage: number,
    status: 'pending' | 'interview' | 'declined',
@@ -11,7 +9,7 @@ interface Props {
 }
 
 const ProgressRing = ({ percentage, className, status }: Props) => {
-  const { theme } = useTheme()
+ 
   return (
    <div className={`w-16 h-16 ${className}`}>
       <CircularProgressbar
@@ -45,7 +43,7 @@ const ProgressRing = ({ percentage, className, status }: Props) => {
          // Customize the text
          text: {
            // Text color
-           fill: '#ffffff',
+           fill: '#a781ea',
            // Text size
            fontSize: '21px',
          },
