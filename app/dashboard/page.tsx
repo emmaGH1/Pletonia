@@ -7,10 +7,14 @@ import Link from 'next/link';
 import JobStatus from '@/components/cards/JobStatus';
 import Barchart from '@/components/dashboard/Barchart';
 import getApplicationData from '@/lib/getApplicationData';
+import { DataTable } from '@/components/dashboard/table/data-table';
+import { columns } from '@/components/dashboard/table/columns';
+import jsonData from '@/app/api/data.json'
 
 
 const Page = () => {
   const { pending, interview, declined } = getApplicationData()
+  console.log(jsonData)
   return (
     <div className='w-full'>
         <div className='flex justify-between w-9/10 mx-auto mt-5 items-center'>
@@ -31,9 +35,12 @@ const Page = () => {
           <JobStatus status='declined'/>
         </div>
 
-        <div>
+        {/* <div>
            <Barchart />
-        </div>
+        </div> */}
+            <div className="container mx-auto py-10">
+              <DataTable columns={columns} data={jsonData} />
+            </div>
     </div>
   );
 };
