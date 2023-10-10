@@ -1,15 +1,9 @@
 
-import jobApplicationsData from '@/lib/mockData.json';
+import jobApplicationsData from '@/app/api/data.json';
 import JobStatus from '@/components/cards/JobStatus';
+import { JobApplications } from '@/types';
 
-interface Props {
-    company: string;
-    position: string;
-    jobLocation: string;
-    jobStatus: string;
-    jobType: string;
-    createdAt: string;
-}
+
 
 const getApplicationData = () => {
   const initialStatus = {
@@ -18,7 +12,7 @@ const getApplicationData = () => {
     declined: 0
   }
 
-  const status = jobApplicationsData.reduce((acc, { jobStatus }: Props) => {
+  const status = jobApplicationsData.reduce((acc, { jobStatus }: JobApplications) => {
     if (jobStatus === "pending") {
       acc.pending += 1;
     } else if (jobStatus === "interview") {
@@ -27,7 +21,7 @@ const getApplicationData = () => {
       acc.declined += 1;
     }
     return acc;
-  }, initialStatus);
+  }, initialStatus);``
 
   return status
 };

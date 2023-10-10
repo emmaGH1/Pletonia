@@ -59,7 +59,7 @@ const currentPath = (): string => {
   }, [toggleNav]);
 
   return (
-    <nav className="w-full flex justify-between bg-secondary dark:bg-dark-secondary items-center p-2 relative">
+    <nav className="w-full flex justify-between bg-secondary dark:bg-dark-secondary items-center p-2 py-4 lg:py-2 relative">
       <div className="flex">
         <Link href="/" className="font-extrabold font-heading text-2xl">
           <Image src="/logo.svg" alt="logo" width={30} height={30} className="dark:invert" />
